@@ -3,6 +3,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { githubUrlSchema } from '@/lib/schemas';
+import { PageTitle, Paragraph, Description } from '@/components/ui/Text';
+import { Button } from '@/components/ui/Button';
+import { Link } from '@/components/ui/Link';
+import { Separator } from '@/components/ui/Separator';
 
 export default function Home() {
   const router = useRouter();
@@ -50,6 +54,38 @@ export default function Home() {
           </button>
         </form>
       </main>
+
+      <Separator />
+
+      <section className="flex w-full max-w-xl flex-col items-center gap-6 px-6 py-16">
+        <PageTitle>Component Preview</PageTitle>
+        <Paragraph>
+          Below are the design-system primitives used across the app.
+        </Paragraph>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <Button>Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="destructive">Destructive</Button>
+          <Button variant="link">Link variant</Button>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <Button size="xs">Size xs</Button>
+          <Button size="sm">Size sm</Button>
+          <Button size="default">Size default</Button>
+          <Button size="lg">Size lg</Button>
+        </div>
+
+        <Separator />
+
+        <Description>
+          Links use the <Link href="/">Link component</Link> with opacity hover.
+          Here is another <Link href="/results/facebook/react">example link</Link>.
+        </Description>
+      </section>
     </div>
   );
 }

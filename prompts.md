@@ -1,3 +1,17 @@
+Create a design system setup using tailwind, belowe u have basic info about the colors. Pls then addjust Button.tsx component and build Link.tsx commponent using next Link
+
+4D42E0 - btn bg primary color
+FFFFFF - btn color text
+3D35AC - btn bg hover color
+F3F9FB - bg color of whole page
+1D243A - regular text color
+
+regular link <a> tags should user regular text color and a:hover {
+opacity: 0.6;
+text-decoration: underline;
+}
+
+
 Co-authored-by: Claude <claude@anthropic.com>
 
 based on plan.md file and zadanie_rekrutacyjne_photoaid.md create a CLAUDE.md rules for the project

@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Description > matches snapshot 1`] = `
+<p
+  class="text-muted-foreground text-sm leading-relaxed tracking-[-0.0094rem]"
+>
+  Description text
+</p>
+`;
+
+exports[`PageTitle > matches snapshot 1`] = `
+<h1
+  class="font-serif text-4xl leading-tight font-bold tracking-[-0.1125rem] sm:text-5xl"
+>
+  Page Title
+</h1>
+`;
+
+exports[`Paragraph > matches snapshot 1`] = `
+<p
+  class="text-base leading-relaxed tracking-[-0.0094rem]"
+>
+  Paragraph text
+</p>
+`;
+
+exports[`SectionTitle > matches snapshot 1`] = `
+<h2
+  class="font-serif text-3xl leading-tight font-bold tracking-[-0.1rem] sm:text-4xl"
+>
+  Section Title
+</h2>
+`;
+
+exports[`SmallTitle > matches snapshot 1`] = `
+<h4
+  class="text-xl leading-snug font-semibold tracking-[-0.0625rem]"
+>
+  Small Title
+</h4>
+`;
+
+exports[`SubsectionTitle > matches snapshot 1`] = `
+<h3
+  class="text-2xl leading-snug font-semibold tracking-[-0.0625rem]"
+>
+  Subsection Title
+</h3>
+`;

@@ -55,12 +55,12 @@ Bootstrap the Next.js project, configure all tooling, establish dev rules via `C
 
 ### Validation
 
-- [ ] `yarn dev` starts without errors
-- [ ] `yarn test` runs Vitest and smoke test passes
-- [ ] Vercel preview URL is live (even for a blank page), deploying from `dev`
-- [ ] GitHub repo has `dev` as default branch
-- [ ] `CLAUDE.md` committed and readable by Claude Code
-- [ ] `.claude/skills/code-review/SKILL.md` committed
+- [✅] `yarn dev` starts without errors
+- [✅] `yarn test` runs Vitest and smoke test passes
+- [✅] Vercel preview URL is live (even for a blank page), deploying from `dev`
+- [✅] GitHub repo has `dev` as default branch
+- [✅] `CLAUDE.md` committed and readable by Claude Code
+- [✅] `.claude/skills/code-review/SKILL.md` committed
 
 ---
 
@@ -99,16 +99,15 @@ Build the thinnest possible version of the entire system end-to-end: landing pag
 
 ### Validation
 
-- [ ] Navigating to `/?repo=https://github.com/vercel/next.js` redirects to `/results/vercel/next.js`
-- [ ] Results page shows loading state with progress steps ticking through SSE events before rendering data
-- [ ] Results page displays the 3 mocked PRs once `result` event arrives
-- [ ] SSE stream sends `progress` then `result` events (verify in browser DevTools → Network → EventStream)
-- [ ] Zod rejects `https://github.com/onlyone` (no repo segment) and returns a 400
-- [ ] `yarn test` still passes
+- [✅] Results page shows loading state with progress steps ticking through SSE events before rendering data
+- [✅] Results page displays the 3 mocked PRs once `result` event arrives
+- [✅] SSE stream sends `progress` then `result` events (verify in browser DevTools → Network → EventStream)
+- [✅] Zod rejects `https://github.com/onlyone` (no repo segment) and returns a 400
+- [✅] `yarn test` still passes
 
 ---
 
-## Step 3 — Design System
+## Step 3 — Design System + landing page
 
 ### Description
 

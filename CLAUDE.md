@@ -96,12 +96,12 @@ src/
 
 ## Error Codes
 
-| Code | Trigger |
-|------|---------|
-| `INVALID_REPO` | GitHub 404 — repo doesn't exist or is private |
-| `NO_PRS` | 0 merged PRs found |
-| `RATE_LIMIT` | GitHub 403/429 |
-| `ANALYSIS_FAILED` | Claude API error |
+| Code              | Trigger                                       |
+| ----------------- | --------------------------------------------- |
+| `INVALID_REPO`    | GitHub 404 — repo doesn't exist or is private |
+| `NO_PRS`          | 0 merged PRs found                            |
+| `RATE_LIMIT`      | GitHub 403/429                                |
+| `ANALYSIS_FAILED` | Claude API error                              |
 
 ## Testing
 

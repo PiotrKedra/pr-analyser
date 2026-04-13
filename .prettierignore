@@ -1,3 +1,8 @@
 .next
 node_modules
 yarn.lock
+prompts.md
+plan.md
+CLAUDE.md
+README.md
+.claude/skills/code-review/SKILL.md

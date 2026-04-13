@@ -17,8 +17,8 @@ describe('Link', () => {
     const link = screen.getByRole('link');
     expect(link).toHaveClass('text-foreground');
     expect(link).toHaveClass('hover:underline');
-    expect(link).toHaveClass('hover:opacity-60');
-    expect(link).toHaveClass('transition-opacity');
+    expect(link).toHaveClass('hover:text-foreground/60');
+    expect(link).toHaveClass('transition-colors');
   });
 
   it('merges custom className', () => {

@@ -25,9 +25,7 @@ describe('Popover', () => {
   describe('default rendering', () => {
     it('renders the trigger button', () => {
       renderPopover();
-      expect(
-        screen.getByRole('button', { name: 'Open' }),
-      ).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Open' })).toBeInTheDocument();
     });
 
     it('does not show content by default', () => {

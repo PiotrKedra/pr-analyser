@@ -95,9 +95,7 @@ describe('prScoreSchema', () => {
   describe('diffUrl validation', () => {
     it('accepts valid GitHub diff URL', () => {
       const result = prScoreSchema.parse(validPrScore);
-      expect(result.diffUrl).toBe(
-        'https://github.com/owner/repo/pull/1/files',
-      );
+      expect(result.diffUrl).toBe('https://github.com/owner/repo/pull/1/files');
     });
 
     it('rejects non-GitHub URL', () => {

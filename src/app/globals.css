@@ -11,6 +11,7 @@
   --muted: #e8edf0;
   --muted-foreground: #737373;
   --destructive: #dc2626;
+  --success: #16a34a;
   --border: #d1d5db;
   --input: #d1d5db;
   --ring: #4d42e0;
@@ -28,6 +29,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);

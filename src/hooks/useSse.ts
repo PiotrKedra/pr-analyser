@@ -3,7 +3,7 @@
 import { useEffect, useReducer, useRef } from 'react';
 import type { ProgressEvent } from '@/lib/schemas';
 
-type SSEStatus = 'connecting' | 'receiving' | 'done' | 'error';
+export type SSEStatus = 'connecting' | 'receiving' | 'done' | 'error';
 
 type SSEState<T> = {
   status: SSEStatus;

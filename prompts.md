@@ -1,5 +1,36 @@
 Co-authored-by: Claude <claude@anthropic.com>
 
+in result page when useSse is steraming events and analysis is not rdy, we want to display full page overlay showing that AI is working. 
+
+It should have white bg, on top we will place LottiFiels animation (for now use gray div mock)
+Belowe there should be event stream with checks (similiar to current implmentation). But to achive nice visula effect place progress steram in a coniatenr of hiegh 300px, on top and bottom of the conaater add abolsute dives with white/transparetn gradient to achive effect where progress steps shows and disapear
+When steram finishes show on result page JSON result as it is done now
+
+
+Now we are moving to cerate a proper api that gets PR's from github and analysiy it using claude. YOu need to update our prortype
+
+key points:
+- Endpoint: GET /repos/{owner}/{repo}/pulls?state=closed&per_page=30 → filter merged_at !== null
+- analysy up to 20 merged PR to fit in 60sec timout (vercel)
+- For each PR fetch: GET /repos/{owner}/{repo}/pulls/{pull_number}/files → changed files, additions, deletions
+- FOr each PR also fetch commit names and send them to claude for analysis
+- Model: claude-sonnet-4-20250514
+- Strategy: batch prompt — send all PRs in a single message with structured output instructions (faster, cheaper than per-PR calls)
+- Prompt structure:
+  System: You are a senior engineering manager evaluating pull requests...
+  User: Analyze these {n} pull requests and return ONLY a JSON array...
+  [PR data: title, description, author, additions, deletions, changed files list]
+- Use Zod to validate Claude's JSON output — if malformed, retry once with a stricter prompt
+- Scoring weights (document in README): Impact 20%, AI-Leverage 40%, Quality 40%
+  Reasoning: AI-Leverage slightly elevated — this tool targets AI-first teams where that signal is most diagnostic; Quality and Impact weighted equally as the two pillars of engineering health
+- we need to steream events while analysing, steram: PR downliadn -> how much PR downloaded -> PR filed/PR commits for each PR steram an event -> when starting claude analysis steram event "Analysing code"
+- Error handling:
+  - 404 from GitHub → INVALID_REPO (repo doesn't exist or is private)
+  - 0 merged PRs → NO_PRS error event with message + suggestion
+  - GitHub 403 / 429 → RATE_LIMIT with suggestion to add a token
+  - Claude API error → surface as generic ANALYSIS_FAILED
+  - Claude API -> rate limit
+
 We are working on landing page secitons now. We already have implemented hero and social proof. 
 - For each seciton i will provide u a basic instruction and ui guidelines.
 - each section need to be responsive and seo friendly

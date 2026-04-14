@@ -29,9 +29,9 @@ export function RepoInput() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row"
+      className="flex w-full flex-col justify-center gap-3 sm:flex-row"
     >
-      <div className="w-full space-y-0.5 sm:w-auto">
+      <div className="flex w-full flex-col gap-0.5 sm:w-auto">
         <PrimitiveInput
           type="text"
           value={url}

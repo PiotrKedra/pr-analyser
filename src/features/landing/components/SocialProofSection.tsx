@@ -29,7 +29,7 @@ function SocialProofSection() {
       <Paragraph className="text-muted-foreground mb-8 text-center text-sm">
         As seen in
       </Paragraph>
-      <div className="grid grid-cols-5 grid-rows-2 gap-8">
+      <div className="flex flex-row flex-wrap justify-center gap-8 md:grid md:grid-cols-5 md:grid-rows-2">
         {logos.map(({ Component, name }) => (
           <div
             key={name}

@@ -10,9 +10,9 @@ vi.mock('next/navigation', () => ({
 
 afterEach(cleanup);
 
-test('renders PR Analyser heading', () => {
+test('renders hero heading', () => {
   render(<Home />);
-  expect(screen.getByText('Piotr PR Analyser')).toBeDefined();
+  expect(screen.getByText(/Pull request analytics/)).toBeDefined();
 });
 
 test('renders input and submit button', () => {

@@ -29,14 +29,15 @@ export function RepoInput() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row"
+      className="flex w-full flex-col justify-center gap-3 sm:flex-row"
     >
-      <div className="w-full space-y-0.5 sm:w-auto">
+      <div className="flex w-full flex-col gap-0.5 sm:w-auto">
         <PrimitiveInput
           type="text"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           placeholder="https://github.com/owner/repo"
+          aria-label="GitHub repository URL"
           error={error}
           className="h-[58px] w-full sm:w-[400px]"
         />

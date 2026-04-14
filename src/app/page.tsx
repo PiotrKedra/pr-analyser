@@ -1,9 +1,3 @@
-import { HeroSection } from '@/features/landing/HeroSection';
+import { LandingPage } from '@/features/landing/pages/LandingPage';
 
-export default function Home() {
-  return (
-    <>
-      <HeroSection />
-    </>
-  );
-}
+export default LandingPage;

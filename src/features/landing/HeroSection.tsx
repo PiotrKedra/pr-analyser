@@ -1,6 +1,6 @@
 import { IconSubtitlesAi } from '@tabler/icons-react';
 import { PageTitle, Paragraph } from '@/components/ui/Text';
-import { RepoInput } from '@/features/landing/repo-input';
+import { RepoInput } from '@/features/landing/RepoInput';
 
 export function HeroSection() {
   return (

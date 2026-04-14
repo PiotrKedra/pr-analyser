@@ -6,7 +6,6 @@ import {
   SubsectionTitle,
   SmallTitle,
   Paragraph,
-  Description,
 } from './Text';
 
 afterEach(() => {
@@ -98,23 +97,6 @@ describe('Paragraph', () => {
 
   it('matches snapshot', () => {
     const { container } = render(<Paragraph>Paragraph text</Paragraph>);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-});
-
-describe('Description', () => {
-  it('renders a p element', () => {
-    render(<Description>Desc text</Description>);
-    expect(screen.getByText('Desc text').tagName).toBe('P');
-  });
-
-  it('merges custom className', () => {
-    render(<Description className="mt-1">Custom desc</Description>);
-    expect(screen.getByText('Custom desc')).toHaveClass('mt-1');
-  });
-
-  it('matches snapshot', () => {
-    const { container } = render(<Description>Description text</Description>);
     expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,16 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Description > matches snapshot 1`] = `
-<p
-  class="text-muted-foreground text-sm leading-relaxed tracking-[-0.0094rem]"
->
-  Description text
-</p>
-`;
-
 exports[`PageTitle > matches snapshot 1`] = `
 <h1
-  class="font-serif text-4xl leading-tight font-bold tracking-[-0.1125rem] sm:text-5xl"
+  class="font-serif text-[2rem] leading-[2.375rem] font-bold tracking-[-0.0625rem] sm:text-[3rem] sm:leading-[3.375rem] sm:tracking-[-0.1125rem]"
 >
   Page Title
 </h1>
@@ -26,7 +18,7 @@ exports[`Paragraph > matches snapshot 1`] = `
 
 exports[`SectionTitle > matches snapshot 1`] = `
 <h2
-  class="font-serif text-3xl leading-tight font-bold tracking-[-0.1rem] sm:text-4xl"
+  class="font-serif text-[1.5rem] leading-[1.875rem] font-bold tracking-[-0.0625rem] sm:text-[2.5rem] sm:leading-[2.875rem] sm:tracking-[-0.0806rem]"
 >
   Section Title
 </h2>
@@ -34,7 +26,7 @@ exports[`SectionTitle > matches snapshot 1`] = `
 
 exports[`SmallTitle > matches snapshot 1`] = `
 <h4
-  class="text-xl leading-snug font-semibold tracking-[-0.0625rem]"
+  class="text-[1.125rem] leading-[1.575rem] font-semibold tracking-[-0.05rem]"
 >
   Small Title
 </h4>
@@ -42,7 +34,7 @@ exports[`SmallTitle > matches snapshot 1`] = `
 
 exports[`SubsectionTitle > matches snapshot 1`] = `
 <h3
-  class="text-2xl leading-snug font-semibold tracking-[-0.0625rem]"
+  class="text-[1.125rem] leading-[1.5rem] font-semibold tracking-[-0.0375rem] sm:text-[2rem] sm:leading-[2.375rem] sm:tracking-[-0.0625rem]"
 >
   Subsection Title
 </h3>

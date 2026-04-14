@@ -5,7 +5,7 @@ function Link({ className, ...props }: React.ComponentProps<typeof NextLink>) {
   return (
     <NextLink
       className={cn(
-        'text-foreground cursor-pointer transition-opacity hover:underline hover:opacity-60',
+        'text-foreground cursor-pointer transition hover:underline hover:opacity-60',
         className,
       )}
       {...props}

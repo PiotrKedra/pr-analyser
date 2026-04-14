@@ -18,7 +18,7 @@ describe('Link', () => {
     expect(link).toHaveClass('text-foreground');
     expect(link).toHaveClass('hover:underline');
     expect(link).toHaveClass('hover:opacity-60');
-    expect(link).toHaveClass('transition-opacity');
+    expect(link).toHaveClass('transition');
   });
 
   it('merges custom className', () => {

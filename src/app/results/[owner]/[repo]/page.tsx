@@ -15,11 +15,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<Params>;
-}) {
+export default async function Page({ params }: { params: Promise<Params> }) {
   const { owner, repo } = await params;
   return <ResultsPage owner={owner} repo={repo} />;
 }

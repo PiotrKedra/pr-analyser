@@ -13,4 +13,4 @@ const Tvn = () => (
   </svg>
 );
 
-export default Tvn;
+export { Tvn };

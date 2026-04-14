@@ -1,13 +1,13 @@
-import Elle from '@/components/logos/Elle';
-import Forbs from '@/components/logos/Forbs';
-import Github from '@/components/logos/Github';
-import ProductHunt from '@/components/logos/ProductHunt';
-import Rzeczpospolita from '@/components/logos/Rzeczpospolita';
-import TechCrunch from '@/components/logos/TechCrunch';
-import TheVerge from '@/components/logos/TheVerge';
-import Tvn from '@/components/logos/Tvn';
-import TvpInfo from '@/components/logos/TvpInfo';
-import WyborczaBiz from '@/components/logos/WyborczaBiz';
+import { Elle } from '@/components/logos/Elle';
+import { Forbs } from '@/components/logos/Forbs';
+import { Github } from '@/components/logos/Github';
+import { ProductHunt } from '@/components/logos/ProductHunt';
+import { Rzeczpospolita } from '@/components/logos/Rzeczpospolita';
+import { TechCrunch } from '@/components/logos/TechCrunch';
+import { TheVerge } from '@/components/logos/TheVerge';
+import { Tvn } from '@/components/logos/Tvn';
+import { TvpInfo } from '@/components/logos/TvpInfo';
+import { WyborczaBiz } from '@/components/logos/WyborczaBiz';
 import { Paragraph } from '@/components/ui/Text';
 
 const logos = [
@@ -26,7 +26,7 @@ const logos = [
 function SocialProofSection() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-6">
-      <Paragraph className="mb-8 text-center text-sm text-gray-500">
+      <Paragraph className="mb-8 text-center text-sm text-muted-foreground">
         As seen in
       </Paragraph>
       <div className="grid grid-cols-5 grid-rows-2 gap-8">

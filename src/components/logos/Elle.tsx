@@ -13,4 +13,4 @@ const Elle = () => (
   </svg>
 );
 
-export default Elle;
+export { Elle };

@@ -13,4 +13,4 @@ const TheVerge = () => (
   </svg>
 );
 
-export default TheVerge;
+export { TheVerge };

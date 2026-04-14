@@ -10,6 +10,7 @@ function StepBadge({ number }: { number: number }) {
 }
 
 function PasteUrlGraphic() {
+  // Overflows card bounds (130% width - 15% offset) for visual depth
   return (
     <div className="-ml-[15%] flex w-[130%] flex-col gap-3">
       <div className="border-border rounded-lg border bg-white px-4 py-3 text-sm text-gray-500">
@@ -23,6 +24,7 @@ function PasteUrlGraphic() {
 }
 
 function AiAnalysisGraphic() {
+  // Shifted right to overflow card bounds for visual depth
   return (
     <div className="flex translate-x-8 flex-col gap-3">
       <div className="mb-1 flex items-center justify-center">
@@ -53,10 +55,11 @@ function ScorecardGraphic() {
     { pr: 'API client', impact: 91, ai: 72, quality: 85 },
   ];
 
+  // Overflows card bounds (160% width + offset) for visual depth
   return (
     <table className="w-[160%] translate-x-4 text-sm">
       <thead>
-        <tr className="text-muted-foreground border-b border-gray-200">
+        <tr className="text-muted-foreground border-b border-border">
           <th className="pb-2 text-left font-medium">PR</th>
           <th className="pb-2 text-right font-medium">Impact</th>
           <th className="pb-2 text-right font-medium">AI</th>
@@ -65,7 +68,7 @@ function ScorecardGraphic() {
       </thead>
       <tbody>
         {rows.map((row) => (
-          <tr key={row.pr} className="border-b border-gray-100">
+          <tr key={row.pr} className="border-b border-border/50">
             <td className="py-2.5 text-left">{row.pr}</td>
             <td className="py-2.5 text-right">{row.impact}</td>
             <td className="py-2.5 text-right">{row.ai}</td>

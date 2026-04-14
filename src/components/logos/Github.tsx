@@ -29,4 +29,4 @@ const Github = () => (
   </svg>
 );
 
-export default Github;
+export { Github };

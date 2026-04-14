@@ -8,7 +8,6 @@ const WyborczaBiz = () => (
   >
     <mask
       id="mask0_7982_13055"
-      // style="mask-type:luminance"
       maskUnits="userSpaceOnUse"
       x="6"
       y="18"
@@ -33,4 +32,4 @@ const WyborczaBiz = () => (
   </svg>
 );
 
-export default WyborczaBiz;
+export { WyborczaBiz };

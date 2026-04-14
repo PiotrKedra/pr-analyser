@@ -61,4 +61,4 @@ const TechCrunch = () => (
   </svg>
 );
 
-export default TechCrunch;
+export { TechCrunch };

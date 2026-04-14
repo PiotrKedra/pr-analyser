@@ -21,4 +21,4 @@ const ProductHunt = () => (
   </svg>
 );
 
-export default ProductHunt;
+export { ProductHunt };

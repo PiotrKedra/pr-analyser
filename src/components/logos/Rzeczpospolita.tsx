@@ -189,4 +189,4 @@ const Rzeczpospolita = () => (
   </svg>
 );
 
-export default Rzeczpospolita;
+export { Rzeczpospolita };

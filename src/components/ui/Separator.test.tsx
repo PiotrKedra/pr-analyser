@@ -43,7 +43,7 @@ describe('Separator', () => {
       const { container } = render(<Separator className="my-4" />);
       const el = container.firstChild as HTMLElement;
       expect(el).toHaveClass('my-4');
-      expect(el).toHaveClass('bg-neutral-200');
+      expect(el).toHaveClass('bg-border');
     });
   });
 

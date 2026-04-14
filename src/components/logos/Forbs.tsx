@@ -17,4 +17,4 @@ const Forbs = () => (
   </svg>
 );
 
-export default Forbs;
+export { Forbs };

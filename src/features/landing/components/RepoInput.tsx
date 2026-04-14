@@ -37,6 +37,7 @@ export function RepoInput() {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           placeholder="https://github.com/owner/repo"
+          aria-label="GitHub repository URL"
           error={error}
           className="h-[58px] w-full sm:w-[400px]"
         />

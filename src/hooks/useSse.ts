@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useReducer, useRef } from 'react';
+import type { z } from 'zod';
+import { progressEventSchema } from '@/lib/schemas';
 import type { ProgressEvent } from '@/lib/schemas';
 
 export type SSEStatus = 'connecting' | 'receiving' | 'done' | 'error';
@@ -49,7 +51,7 @@ const initialState: SSEState<unknown> = {
   error: null,
 };
 
-export function useSse<T>(url: string | null) {
+export function useSse<T>(url: string | null, resultSchema?: z.ZodType<T>) {
   const [state, dispatch] = useReducer(
     createReducer<T>(),
     initialState as SSEState<T>,
@@ -65,20 +67,37 @@ export function useSse<T>(url: string | null) {
     eventSourceRef.current = es;
 
     es.addEventListener('progress', (e: MessageEvent) => {
-      const data = JSON.parse(e.data) as ProgressEvent;
-      dispatch({ type: 'progress', step: data });
+      try {
+        const data = progressEventSchema.parse(JSON.parse(e.data));
+        dispatch({ type: 'progress', step: data });
+      } catch {
+        dispatch({
+          type: 'error',
+          message: 'Invalid progress data from server',
+        });
+        es.close();
+      }
     });
 
     es.addEventListener('result', (e: MessageEvent) => {
-      const data = JSON.parse(e.data) as T;
-      dispatch({ type: 'result', data });
+      try {
+        const raw: unknown = JSON.parse(e.data);
+        const data = resultSchema ? resultSchema.parse(raw) : (raw as T);
+        dispatch({ type: 'result', data });
+      } catch {
+        dispatch({ type: 'error', message: 'Invalid result data from server' });
+      }
       es.close();
     });
 
     es.addEventListener('error', (e: Event) => {
       if (e instanceof MessageEvent) {
-        const data = JSON.parse(e.data) as { message: string };
-        dispatch({ type: 'error', message: data.message });
+        try {
+          const data = JSON.parse(e.data) as { message?: string };
+          dispatch({ type: 'error', message: data.message ?? 'Unknown error' });
+        } catch {
+          dispatch({ type: 'error', message: 'Server error' });
+        }
       } else {
         dispatch({ type: 'error', message: 'Server error' });
       }
@@ -95,7 +114,7 @@ export function useSse<T>(url: string | null) {
       es.close();
       eventSourceRef.current = null;
     };
-  }, [url]);
+  }, [url, resultSchema]);
 
   return state;
 }

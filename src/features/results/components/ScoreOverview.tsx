@@ -35,7 +35,8 @@ function ScoreOverview({
   const scores = { impact, aiLeverage, quality };
 
   useEffect(() => {
-    requestAnimationFrame(() => setBarsAnimated(true));
+    const id = requestAnimationFrame(() => setBarsAnimated(true));
+    return () => cancelAnimationFrame(id);
   }, []);
 
   return (

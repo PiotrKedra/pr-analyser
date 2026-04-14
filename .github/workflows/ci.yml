@@ -19,7 +19,10 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          for i in 1 2 3; do
+            yarn install --frozen-lockfile && break || sleep 15
+          done
 
       - name: Format check
         run: yarn format:check

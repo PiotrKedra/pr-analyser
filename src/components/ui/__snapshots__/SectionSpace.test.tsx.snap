@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SectionSpace > snapshots > matches snapshot 1`] = `
+<div
+  class="h-16 sm:h-[6.5rem]"
+/>
+`;

@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Separator > snapshots > horizontal matches snapshot 1`] = `
+<div
+  class="shrink-0 bg-neutral-200 h-[1px] w-full"
+  data-orientation="horizontal"
+  data-slot="separator"
+  role="none"
+/>
+`;
+
+exports[`Separator > snapshots > vertical matches snapshot 1`] = `
+<div
+  class="shrink-0 bg-neutral-200 h-full w-[1px]"
+  data-orientation="vertical"
+  data-slot="separator"
+  role="none"
+/>
+`;

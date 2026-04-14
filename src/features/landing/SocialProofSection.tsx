@@ -25,11 +25,11 @@ const logos = [
 
 function SocialProofSection() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-12">
+    <section className="mx-auto max-w-5xl px-4 py-6">
       <Paragraph className="mb-8 text-center text-sm text-gray-500">
         As seen in
       </Paragraph>
-      <div className="flex flex-wrap justify-center gap-8 lg:grid lg:grid-cols-5">
+      <div className="grid grid-cols-5 grid-rows-2 gap-8">
         {logos.map(({ Component, name }) => (
           <div
             key={name}

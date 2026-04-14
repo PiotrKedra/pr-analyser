@@ -1,5 +1,6 @@
 import { Paragraph, SectionTitle, SubsectionTitle } from '@/components/ui/Text';
 
+
 const cards = [
   {
     title: 'Repository overview',
@@ -29,22 +30,28 @@ const cards = [
 
 function DashboardPreviewSection() {
   return (
-    <section className="w-full bg-white py-12">
-      <div className="mx-auto max-w-5xl px-4">
-        <SectionTitle className="mb-8 text-center">
-          Your results at a glance
-        </SectionTitle>
+    <section className="w-full bg-white pt-[6.5rem] pb-[6.5rem]">
+      <div className="mx-auto max-w-4xl px-4">
+        <div className="mb-[23px] sm:mb-[45px] text-center">
+          <SectionTitle>Your results at a glance</SectionTitle>
+          <Paragraph className="text-muted-foreground mt-3 text-sm">
+            See exactly how each pull request performs across three key
+            dimensions.
+          </Paragraph>
+        </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {cards.map((card) => (
             <div
               key={card.title}
-              className={`border-border rounded-xl border p-6 ${card.span}`}
+              className={`border-border overflow-hidden rounded-xl border p-0 ${card.span}`}
             >
-              <div className="bg-muted h-32 w-full rounded-lg" />
-              <SubsectionTitle className="mt-4">{card.title}</SubsectionTitle>
-              <Paragraph className="text-muted-foreground mt-2 text-sm">
-                {card.description}
-              </Paragraph>
+              <div className="bg-muted h-32 w-full" />
+              <div className="p-6 pt-4">
+                <SubsectionTitle>{card.title}</SubsectionTitle>
+                <Paragraph className="text-muted-foreground mt-2 text-sm">
+                  {card.description}
+                </Paragraph>
+              </div>
             </div>
           ))}
         </div>

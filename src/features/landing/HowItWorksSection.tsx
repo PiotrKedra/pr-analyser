@@ -1,6 +1,7 @@
 import { IconLoader2 } from '@tabler/icons-react';
 import { Paragraph, SectionTitle, SubsectionTitle } from '@/components/ui/Text';
 
+
 function StepBadge({ number }: { number: number }) {
   return (
     <span className="bg-primary text-primary-foreground flex h-7 w-7 items-center justify-center rounded-md text-sm font-bold">
@@ -11,11 +12,11 @@ function StepBadge({ number }: { number: number }) {
 
 function PasteUrlGraphic() {
   return (
-    <div className="flex flex-col gap-3">
-      <div className="border-input rounded-md border bg-white px-3 py-2 text-sm text-gray-500">
+    <div className="-ml-[15%] flex w-[130%] flex-col gap-3">
+      <div className="border-border rounded-lg border bg-white px-4 py-3 text-sm text-gray-500">
         https://github.com/vercel/next.js
       </div>
-      <div className="bg-primary text-primary-foreground rounded-md px-4 py-2 text-center text-sm font-medium">
+      <div className="bg-primary text-primary-foreground flex h-10 items-center justify-center rounded-lg px-[50px] text-[17px] font-medium">
         Analyse
       </div>
     </div>
@@ -24,20 +25,20 @@ function PasteUrlGraphic() {
 
 function AiAnalysisGraphic() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex translate-x-8 flex-col gap-3">
       <div className="mb-1 flex items-center justify-center">
-        <IconLoader2 size={28} className="text-primary animate-spin" />
+        <IconLoader2 size={36} className="text-primary" />
       </div>
       {['fix: resolve auth redirect loop', 'feat: add dark mode toggle'].map(
         (label) => (
-          <div key={label} className="flex items-center gap-2 text-sm">
+          <div key={label} className="flex items-center gap-3 text-base">
             <span className="text-green-600">&#10003;</span>
             <span className="text-muted-foreground truncate">{label}</span>
           </div>
         ),
       )}
-      <div className="flex items-center gap-2 text-sm">
-        <IconLoader2 size={14} className="text-primary animate-spin" />
+      <div className="flex items-center gap-3 text-base">
+        <IconLoader2 size={20} className="text-primary" />
         <span className="text-muted-foreground truncate">
           refactor: extract API client
         </span>
@@ -54,22 +55,22 @@ function ScorecardGraphic() {
   ];
 
   return (
-    <table className="w-full text-xs">
+    <table className="w-[160%] translate-x-4 text-sm">
       <thead>
         <tr className="text-muted-foreground border-b border-gray-200">
-          <th className="pb-1 text-left font-medium">PR</th>
-          <th className="pb-1 text-right font-medium">Impact</th>
-          <th className="pb-1 text-right font-medium">AI</th>
-          <th className="pb-1 text-right font-medium">Quality</th>
+          <th className="pb-2 text-left font-medium">PR</th>
+          <th className="pb-2 text-right font-medium">Impact</th>
+          <th className="pb-2 text-right font-medium">AI</th>
+          <th className="pb-2 text-right font-medium">Quality</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row) => (
           <tr key={row.pr} className="border-b border-gray-100">
-            <td className="py-1.5 text-left">{row.pr}</td>
-            <td className="py-1.5 text-right">{row.impact}</td>
-            <td className="py-1.5 text-right">{row.ai}</td>
-            <td className="py-1.5 text-right">{row.quality}</td>
+            <td className="py-2.5 text-left">{row.pr}</td>
+            <td className="py-2.5 text-right">{row.impact}</td>
+            <td className="py-2.5 text-right">{row.ai}</td>
+            <td className="py-2.5 text-right">{row.quality}</td>
           </tr>
         ))}
       </tbody>
@@ -103,12 +104,14 @@ const steps = [
 
 function HowItWorksSection() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-12">
-      <SectionTitle className="mb-8 text-center">How it works</SectionTitle>
+    <section className="mx-auto max-w-5xl px-4">
+      <SectionTitle className="mb-[23px] sm:mb-[45px]">
+        How it works
+      </SectionTitle>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {steps.map((step) => (
-          <div key={step.number}>
-            <div className="border-border relative aspect-square rounded-xl border bg-white p-6">
+          <div key={step.number} className="group">
+            <div className="border-border relative h-[200px] overflow-hidden rounded-xl border bg-white p-6">
               <div className="absolute top-4 left-4">
                 <StepBadge number={step.number} />
               </div>

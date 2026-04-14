@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { githubUrlSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/Button';
+import { PrimitiveInput } from '@/components/form/PrimitiveInput';
+import { InputError } from '@/components/form/InputError';
 
 export function RepoInput() {
   const router = useRouter();
@@ -25,16 +27,23 @@ export function RepoInput() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-row gap-3">
-      <input
-        type="text"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        placeholder="https://github.com/owner/repo"
-        className="border-border text-foreground placeholder-muted-foreground focus:border-ring focus:ring-ring/20 w-full rounded-lg border px-4 py-3 focus:ring-2 focus:outline-none"
-      />
-      {error && <p className="text-destructive text-sm">{error}</p>}
-      <Button type="submit" size="lg">
+    <form
+      onSubmit={handleSubmit}
+      className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row"
+    >
+      <div className="w-full space-y-0.5 sm:w-auto">
+        <PrimitiveInput
+          type="text"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          placeholder="https://github.com/owner/repo"
+          error={error}
+          className="h-[58px] w-full sm:w-[400px]"
+        />
+        <InputError error={error} />
+      </div>
+
+      <Button type="submit" size="lg" className="w-full sm:w-auto">
         Analyse
       </Button>
     </form>

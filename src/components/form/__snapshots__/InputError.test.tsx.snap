@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InputError > snapshots > with error string matches snapshot 1`] = `
+<span
+  class="text-destructive text-xs leading-[14px]"
+>
+  Invalid input
+</span>
+`;

@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PrimitiveInput > snapshots > default matches snapshot 1`] = `
+<input
+  class="border-border text-foreground placeholder-muted-foreground focus:border-ring w-full rounded-lg border px-4 py-3 focus:outline-none"
+/>
+`;
+
+exports[`PrimitiveInput > snapshots > with error matches snapshot 1`] = `
+<input
+  class="text-foreground placeholder-muted-foreground w-full rounded-lg border px-4 py-3 focus:outline-none border-destructive focus:border-destructive"
+/>
+`;

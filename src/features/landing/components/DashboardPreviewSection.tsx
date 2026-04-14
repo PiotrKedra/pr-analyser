@@ -1,6 +1,5 @@
 import { Paragraph, SectionTitle, SubsectionTitle } from '@/components/ui/Text';
 
-
 const cards = [
   {
     title: 'Repository overview',
@@ -32,7 +31,7 @@ function DashboardPreviewSection() {
   return (
     <section className="w-full bg-white pt-[6.5rem] pb-[6.5rem]">
       <div className="mx-auto max-w-4xl px-4">
-        <div className="mb-[23px] sm:mb-[45px] text-center">
+        <div className="mb-[23px] text-center sm:mb-[45px]">
           <SectionTitle>Your results at a glance</SectionTitle>
           <Paragraph className="text-muted-foreground mt-3 text-sm">
             See exactly how each pull request performs across three key

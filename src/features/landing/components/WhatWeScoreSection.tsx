@@ -1,7 +1,6 @@
 import { IconRocket, IconSparkles, IconShieldCheck } from '@tabler/icons-react';
 import { Paragraph, SectionTitle, SubsectionTitle } from '@/components/ui/Text';
 
-
 const cards = [
   {
     title: 'Impact',

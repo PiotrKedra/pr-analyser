@@ -1,7 +1,6 @@
 import { IconLoader2 } from '@tabler/icons-react';
 import { Paragraph, SectionTitle, SubsectionTitle } from '@/components/ui/Text';
 
-
 function StepBadge({ number }: { number: number }) {
   return (
     <span className="bg-primary text-primary-foreground flex h-7 w-7 items-center justify-center rounded-md text-sm font-bold">

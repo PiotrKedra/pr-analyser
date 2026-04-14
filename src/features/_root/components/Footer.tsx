@@ -17,7 +17,7 @@ const columns = [
   },
 ];
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="border-border mt-auto border-t">
       <div className="mx-auto max-w-5xl px-4 py-12">
@@ -60,5 +60,3 @@ function Footer() {
     </footer>
   );
 }
-
-export { Footer };

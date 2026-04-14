@@ -33,7 +33,7 @@ function AiAnalysisGraphic() {
       {['fix: resolve auth redirect loop', 'feat: add dark mode toggle'].map(
         (label) => (
           <div key={label} className="flex items-center gap-3 text-base">
-            <span className="text-green-600">&#10003;</span>
+            <span className="text-success">&#10003;</span>
             <span className="text-muted-foreground truncate">{label}</span>
           </div>
         ),
@@ -49,7 +49,7 @@ function AiAnalysisGraphic() {
 }
 
 function textScoreColor(score: number) {
-  if (score >= 80) return 'text-green-600';
+  if (score >= 80) return 'text-success';
   if (score >= 50) return 'text-foreground';
   return 'text-red-600';
 }

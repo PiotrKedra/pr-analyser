@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Link > matches snapshot 1`] = `
+<a
+  class="text-foreground cursor-pointer transition hover:underline hover:opacity-60"
+  href="/about"
+>
+  About Link
+</a>
+`;

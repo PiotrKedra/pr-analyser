@@ -71,6 +71,7 @@ Apply each axis to every file in scope. Skip axes that don't apply to a given fi
 - Shared utilities in `/lib/`
 - Path alias `@/*` used for imports (no `../../../` chains)
 - No orphaned files outside the established directory structure
+- **Naming conventions**: `PascalCase` for components, types, and their files (`SomeComponent.tsx`). `camelCase` for everything else — variables, functions, objects, schema fields, file names (`useSomeHook.ts`)
 
 ### Axis 4 — Tailwind v4 & Design System
 

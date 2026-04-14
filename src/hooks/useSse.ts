@@ -49,7 +49,7 @@ const initialState: SSEState<unknown> = {
   error: null,
 };
 
-export function useSSE<T>(url: string | null) {
+export function useSse<T>(url: string | null) {
   const [state, dispatch] = useReducer(
     createReducer<T>(),
     initialState as SSEState<T>,

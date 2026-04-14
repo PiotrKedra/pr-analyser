@@ -12,7 +12,7 @@ afterEach(cleanup);
 
 test('renders PR Analyser heading', () => {
   render(<Home />);
-  expect(screen.getByText('PR Analyser')).toBeDefined();
+  expect(screen.getByText('Piotr PR Analyser')).toBeDefined();
 });
 
 test('renders input and submit button', () => {

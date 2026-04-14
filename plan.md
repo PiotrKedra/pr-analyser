@@ -125,24 +125,19 @@ Extract the exact visual identity from passport-photo.online and codify it as Ta
   - Load via `next/font` (zero layout shift, self-hosted)
 - Spacing scale: confirm base unit (likely 4px or 8px grid) — use Tailwind defaults
 - shadcn/ui theme configured in `globals.css` CSS variables to match the passport-photo.online palette
-- Custom primitive components on top of shadcn where needed:
-  - `ScoreRing` — circular progress SVG for single score display (not in shadcn, build from scratch)
-  - `Badge` variant extensions — score level labels (Excellent / Good / Fair / Poor)
 - Global CSS: CSS variables, base `body` styles, scroll behavior
 
 ### Potential Problems
 
 - passport-photo.online may use a licensed font — use the closest free equivalent (Inter is almost identical to their brand usage); do NOT embed their actual font files
 - Tailwind v4 uses CSS-native variables (`@theme`) instead of `tailwind.config.js` — syntax: `@theme { --color-primary: #0057FF; }` — shadcn's generated CSS variables may need manual alignment with v4 syntax
-- `ScoreRing` SVG animation via CSS `stroke-dashoffset` — test on Safari (webkit prefix may be needed)
 
 ### Validation
 
-- [ ] Colors match passport-photo.online within visual tolerance (eyeball + hex comparison in DevTools)
-- [ ] Font loads correctly on mobile (no fallback flash — check in slow 3G throttle)
-- [ ] shadcn Button, Input, Card, Badge render with correct brand colors (not shadcn defaults)
-- [ ] `ScoreRing` renders a circle with correct fill percentage for a given score prop
-- [ ] All custom primitives have Vitest snapshot tests (1 test each)
+- [✅] Colors match passport-photo.online within visual tolerance (eyeball + hex comparison in DevTools)
+- [✅] Font loads correctly on mobile (no fallback flash — check in slow 3G throttle)
+- [✅] shadcn Button, Input render with correct brand colors (not shadcn defaults)
+- [✅] All custom primitives have Vitest snapshot tests (1 test each)
 
 ---
 

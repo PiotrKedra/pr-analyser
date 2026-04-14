@@ -1,7 +1,7 @@
 'use client';
 
 import { use } from 'react';
-import { useSSE } from '@/hooks/use-sse';
+import { useSse } from '@/hooks/useSse';
 import type { RepoAnalysis } from '@/lib/schemas';
 
 export default function ResultsPage({
@@ -11,7 +11,7 @@ export default function ResultsPage({
 }) {
   const { owner, repo } = use(params);
   const url = `/api/analyze?owner=${encodeURIComponent(owner)}&repo=${encodeURIComponent(repo)}`;
-  const { status, progressSteps, result, error } = useSSE<RepoAnalysis>(url);
+  const { status, progressSteps, result, error } = useSse<RepoAnalysis>(url);
 
   return (
     <div className="flex flex-1 flex-col items-center bg-zinc-50 px-6 py-16">

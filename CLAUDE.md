@@ -40,7 +40,7 @@ src/
 - **Imports:** Use `@/*` path alias (maps to `./src/*`)
 - **Components:** Functional components with TypeScript. Props as inline types for simple components, extracted `type` for complex ones.
 - **No `any` types.** Use `unknown` + Zod parse or proper types.
-- **Naming:** PascalCase for components/types, camelCase for functions/variables, kebab-case for files/directories.
+- **Naming:** `PascalCase` for components, types, and their files (`SomeComponent.tsx`). `camelCase` for everything else — variables, functions, objects, schema fields, file names (`useSomeHook.ts`).
 - **Exports:** Named exports for components. Default exports only for Next.js pages/layouts.
 - **Server vs Client:** Default to Server Components. Add `"use client"` only when needed (hooks, event handlers, browser APIs).
 - **Error handling:** Zod validation at API boundaries. Try/catch around external calls (GitHub API, Claude API). Surface user-friendly error messages.

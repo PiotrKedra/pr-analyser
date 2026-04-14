@@ -2,7 +2,7 @@
 
 exports[`Link > matches snapshot 1`] = `
 <a
-  class="text-foreground cursor-pointer transition-colors hover:underline hover:text-foreground/60"
+  class="text-foreground cursor-pointer transition hover:underline hover:opacity-60"
   href="/about"
 >
   About Link

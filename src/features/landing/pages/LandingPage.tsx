@@ -1,10 +1,10 @@
 import { SectionSpace } from '@/components/ui/SectionSpace';
-import { HeroSection } from '@/features/landing/HeroSection';
-import { SocialProofSection } from '@/features/landing/SocialProofSection';
+import { HeroSection } from '@/features/landing/components/HeroSection';
+import { SocialProofSection } from '@/features/landing/components/SocialProofSection';
 import { Separator } from '@/components/ui/Separator';
-import { HowItWorksSection } from '@/features/landing/HowItWorksSection';
-import { WhatWeScoreSection } from '@/features/landing/WhatWeScoreSection';
-import { DashboardPreviewSection } from '@/features/landing/DashboardPreviewSection';
+import { HowItWorksSection } from '@/features/landing/components/HowItWorksSection';
+import { WhatWeScoreSection } from '@/features/landing/components/WhatWeScoreSection';
+import { DashboardPreviewSection } from '@/features/landing/components/DashboardPreviewSection';
 
 function LandingPage() {
   return (

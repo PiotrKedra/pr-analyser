@@ -1,5 +1,5 @@
 import { PageTitle, Paragraph } from '@/components/ui/Text';
-import { RepoInput } from '@/features/landing/RepoInput';
+import { RepoInput } from '@/features/landing/components/RepoInput';
 
 export function HeroSection() {
   return (

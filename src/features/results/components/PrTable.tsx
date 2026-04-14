@@ -19,6 +19,8 @@ import {
   TableHead,
   TableCell,
 } from '@/components/ui/Table';
+import { Input } from '@/components/ui/Input';
+import { Select } from '@/components/ui/Select';
 
 const columnHelper = createColumnHelper<PRScore>();
 
@@ -127,18 +129,22 @@ function PrTable({ prs }: { prs: PRScore[] }) {
 
   return (
     <div>
-      <div className="mb-3 flex flex-wrap items-center justify-end gap-2">
-        <input
+      <div className="mb-3 flex flex-wrap items-center justify-end gap-2 pt-2 pr-2">
+        <Input
           type="text"
           placeholder="Search PRs..."
           value={(titleColumn?.getFilterValue() as string) ?? ''}
-          onChange={(e) => titleColumn?.setFilterValue(e.target.value || undefined)}
-          className="border-border bg-background text-foreground placeholder:text-muted-foreground h-8 w-44 rounded-md border px-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary"
+          onChange={(e) =>
+            titleColumn?.setFilterValue(e.target.value || undefined)
+          }
+          className="h-8 w-44 text-xs"
         />
-        <select
+        <Select
           value={(authorColumn?.getFilterValue() as string) ?? ''}
-          onChange={(e) => authorColumn?.setFilterValue(e.target.value || undefined)}
-          className="border-border bg-background text-foreground h-8 rounded-md border px-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary"
+          onChange={(e) =>
+            authorColumn?.setFilterValue(e.target.value || undefined)
+          }
+          className="h-8 w-auto text-xs"
         >
           <option value="">All authors</option>
           {uniqueAuthors.map((author) => (
@@ -146,7 +152,7 @@ function PrTable({ prs }: { prs: PRScore[] }) {
               {author}
             </option>
           ))}
-        </select>
+        </Select>
       </div>
       <Table className="table-fixed">
         <TableHeader>
@@ -187,7 +193,7 @@ function PrTable({ prs }: { prs: PRScore[] }) {
             <TableRow>
               <TableCell
                 colSpan={columns.length}
-                className="h-24 text-center text-muted-foreground"
+                className="text-muted-foreground h-24 text-center"
               >
                 No PRs match your filters
               </TableCell>

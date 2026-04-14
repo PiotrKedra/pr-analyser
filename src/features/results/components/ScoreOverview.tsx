@@ -1,4 +1,8 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { SmallTitle, Paragraph } from '@/components/ui/Text';
+import { ScoreRing } from '@/components/ui/ScoreRing';
 
 type ScoreOverviewProps = {
   totalScore: number;
@@ -27,24 +31,24 @@ function ScoreOverview({
   quality,
   recommendations,
 }: ScoreOverviewProps) {
+  const [barsAnimated, setBarsAnimated] = useState(false);
   const scores = { impact, aiLeverage, quality };
+
+  useEffect(() => {
+    requestAnimationFrame(() => setBarsAnimated(true));
+  }, []);
 
   return (
     <div className="border-border rounded-xl border bg-white p-6">
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
-        <div className="text-center sm:text-left">
-          <Paragraph className="text-muted-foreground mb-1">
+      <div className="flex flex-col items-center gap-6">
+        <div className="text-center">
+          <Paragraph className="text-muted-foreground mb-2">
             Overall Score
           </Paragraph>
-          <p className="text-foreground text-5xl font-bold tracking-tight">
-            {totalScore}
-            <span className="text-muted-foreground text-2xl font-normal">
-              /100
-            </span>
-          </p>
+          <ScoreRing score={totalScore} />
         </div>
 
-        <div className="grid flex-1 grid-cols-3 gap-4">
+        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
           {subScores.map(({ label, weight, key }) => {
             const value = scores[key];
             return (
@@ -58,8 +62,11 @@ function ScoreOverview({
                 </p>
                 <div className="bg-muted h-2 rounded-full">
                   <div
-                    className={`${scoreColor(value)} h-2 rounded-full transition-all`}
-                    style={{ width: `${value}%` }}
+                    className={`${scoreColor(value)} h-2 rounded-full`}
+                    style={{
+                      width: barsAnimated ? `${value}%` : '0%',
+                      transition: 'width 0.8s ease-out',
+                    }}
                   />
                 </div>
               </div>

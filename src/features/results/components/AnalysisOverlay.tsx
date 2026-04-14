@@ -23,15 +23,15 @@ export function AnalysisOverlay({
   if (status !== 'connecting' && status !== 'receiving') return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background">
+    <div className="bg-background fixed inset-0 z-50 flex flex-col items-center justify-center">
       <div className="bg-muted mb-6 h-[120px] w-[120px] animate-pulse rounded-2xl" />
       <p className="text-muted-foreground mb-8 text-sm font-medium">
         AI is analyzing...
       </p>
 
       <div className="relative h-[300px] w-full max-w-md overflow-hidden">
-        <div className="pointer-events-none absolute top-0 right-0 left-0 z-10 h-16 bg-gradient-to-b from-background to-transparent" />
-        <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-16 bg-gradient-to-t from-background to-transparent" />
+        <div className="from-background pointer-events-none absolute top-0 right-0 left-0 z-10 h-16 bg-gradient-to-b to-transparent" />
+        <div className="from-background pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-16 bg-gradient-to-t to-transparent" />
 
         <div
           ref={scrollRef}

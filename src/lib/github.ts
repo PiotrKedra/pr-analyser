@@ -37,10 +37,7 @@ async function githubFetch(path: string): Promise<unknown> {
   const res = await fetch(`${GITHUB_API}${path}`, { headers: headers() });
 
   if (res.status === 404) {
-    throw new GitHubError(
-      'INVALID_REPO',
-      'Repository not found or is private',
-    );
+    throw new GitHubError('INVALID_REPO', 'Repository not found or is private');
   }
   if (res.status === 403 || res.status === 429) {
     throw new GitHubError(

@@ -24,7 +24,7 @@ export function AnalysisOverlay({
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
-      <div className="mb-6 h-[120px] w-[120px] animate-pulse rounded-2xl bg-muted" />
+      <div className="bg-muted mb-6 h-[120px] w-[120px] animate-pulse rounded-2xl" />
       <p className="text-muted-foreground mb-8 text-sm font-medium">
         AI is analyzing...
       </p>

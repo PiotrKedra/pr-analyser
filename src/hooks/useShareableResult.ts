@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useSse } from '@/hooks/useSse';
+import { repoAnalysisSchema } from '@/lib/schemas';
 import type { RepoAnalysis } from '@/lib/schemas';
 import { compressToHash, decompressFromHash } from '@/lib/shareCodec';
 
@@ -19,6 +20,7 @@ export function useShareableResult(owner: string, repo: string) {
           setHashResult(data);
           setIsSharedView(true);
         } catch {
+          console.warn('Invalid shared link, falling back to fresh analysis');
           window.location.hash = '';
         }
       }
@@ -27,11 +29,12 @@ export function useShareableResult(owner: string, repo: string) {
     checkHash();
   }, []);
 
-  const sseUrl = hashChecked && !hashResult
-    ? `/api/analyze?owner=${encodeURIComponent(owner)}&repo=${encodeURIComponent(repo)}`
-    : null;
+  const sseUrl =
+    hashChecked && !hashResult
+      ? `/api/analyze?owner=${encodeURIComponent(owner)}&repo=${encodeURIComponent(repo)}`
+      : null;
 
-  const sse = useSse<RepoAnalysis>(sseUrl);
+  const sse = useSse<RepoAnalysis>(sseUrl, repoAnalysisSchema);
 
   useEffect(() => {
     if (sse.result && !isSharedView) {

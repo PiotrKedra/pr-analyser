@@ -74,9 +74,7 @@ function ScorecardGraphic() {
       <tbody>
         {rows.map((row) => (
           <tr key={row.id} className="border-border/50 border-b">
-            <td className="text-muted-foreground py-2.5 text-left">
-              {row.id}
-            </td>
+            <td className="text-muted-foreground py-2.5 text-left">{row.id}</td>
             <td className="truncate py-2.5 text-left">{row.title}</td>
             <td
               className={`py-2.5 text-right font-bold ${textScoreColor(row.score)}`}

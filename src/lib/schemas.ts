@@ -85,7 +85,12 @@ export const prScoreSchema = z.object({
   quality: z.number().min(0).max(100),
   totalScore: z.number().min(0).max(100),
   summary: z.string(),
-  diffUrl: z.string().url(),
+  diffUrl: z
+    .string()
+    .url()
+    .refine((url) => url.startsWith('https://github.com/'), {
+      message: 'Diff URL must be a GitHub URL',
+    }),
 });
 
 export type PRScore = z.infer<typeof prScoreSchema>;

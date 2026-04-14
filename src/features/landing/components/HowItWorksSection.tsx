@@ -59,7 +59,7 @@ function ScorecardGraphic() {
   return (
     <table className="w-[160%] translate-x-4 text-sm">
       <thead>
-        <tr className="text-muted-foreground border-b border-border">
+        <tr className="text-muted-foreground border-border border-b">
           <th className="pb-2 text-left font-medium">PR</th>
           <th className="pb-2 text-right font-medium">Impact</th>
           <th className="pb-2 text-right font-medium">AI</th>
@@ -68,7 +68,7 @@ function ScorecardGraphic() {
       </thead>
       <tbody>
         {rows.map((row) => (
-          <tr key={row.pr} className="border-b border-border/50">
+          <tr key={row.pr} className="border-border/50 border-b">
             <td className="py-2.5 text-left">{row.pr}</td>
             <td className="py-2.5 text-right">{row.impact}</td>
             <td className="py-2.5 text-right">{row.ai}</td>

@@ -26,7 +26,7 @@ const logos = [
 function SocialProofSection() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-6">
-      <Paragraph className="mb-8 text-center text-sm text-muted-foreground">
+      <Paragraph className="text-muted-foreground mb-8 text-center text-sm">
         As seen in
       </Paragraph>
       <div className="grid grid-cols-5 grid-rows-2 gap-8">

@@ -2,7 +2,7 @@
 
 exports[`Separator > snapshots > horizontal matches snapshot 1`] = `
 <div
-  class="shrink-0 bg-border h-[1px] w-full"
+  class="bg-border shrink-0 h-[1px] w-full"
   data-orientation="horizontal"
   data-slot="separator"
   role="none"
@@ -11,7 +11,7 @@ exports[`Separator > snapshots > horizontal matches snapshot 1`] = `
 
 exports[`Separator > snapshots > vertical matches snapshot 1`] = `
 <div
-  class="shrink-0 bg-border h-full w-[1px]"
+  class="bg-border shrink-0 h-full w-[1px]"
   data-orientation="vertical"
   data-slot="separator"
   role="none"

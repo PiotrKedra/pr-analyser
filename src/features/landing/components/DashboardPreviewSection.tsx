@@ -43,7 +43,10 @@ function DashboardPreviewSection() {
           {cards.map((card) => (
             <div
               key={card.title}
-              className={cn('border-border overflow-hidden rounded-xl border p-0', card.span)}
+              className={cn(
+                'border-border overflow-hidden rounded-xl border p-0',
+                card.span,
+              )}
             >
               <div className="bg-muted h-32 w-full" />
               <div className="p-6 pt-4">

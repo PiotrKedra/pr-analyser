@@ -10,7 +10,9 @@ describe('Button', () => {
   describe('default rendering', () => {
     it('renders a button element with children text', () => {
       render(<Button>Click me</Button>);
-      expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('button', { name: 'Click me' }),
+      ).toBeInTheDocument();
     });
 
     it('has default variant classes', () => {
@@ -128,7 +130,9 @@ describe('Button', () => {
     });
 
     it('secondary variant matches snapshot', () => {
-      const { container } = render(<Button variant="secondary">Secondary</Button>);
+      const { container } = render(
+        <Button variant="secondary">Secondary</Button>,
+      );
       expect(container.firstChild).toMatchSnapshot();
     });
 
@@ -138,7 +142,9 @@ describe('Button', () => {
     });
 
     it('destructive variant matches snapshot', () => {
-      const { container } = render(<Button variant="destructive">Destructive</Button>);
+      const { container } = render(
+        <Button variant="destructive">Destructive</Button>,
+      );
       expect(container.firstChild).toMatchSnapshot();
     });
 

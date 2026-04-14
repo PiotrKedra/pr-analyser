@@ -207,6 +207,7 @@ function PrTable({ prs }: { prs: PRScore[] }) {
   const authorColumn = table.getColumn('author');
 
   const advancedFilterIds = new Set([
+    'author',
     'changedFiles',
     'impact',
     'aiLeverage',
@@ -219,7 +220,7 @@ function PrTable({ prs }: { prs: PRScore[] }) {
 
   return (
     <div>
-      <div className="mb-3 flex flex-wrap items-center justify-end gap-2 pt-2 pr-2">
+      <div className="mb-3 flex items-center justify-end gap-2 px-2 pt-2">
         <PrimitiveInput
           type="text"
           placeholder="Search PRs..."
@@ -227,22 +228,8 @@ function PrTable({ prs }: { prs: PRScore[] }) {
           onChange={(e) =>
             titleColumn?.setFilterValue(e.target.value || undefined)
           }
-          className="h-8 w-44 text-xs"
+          className="h-8 w-44 min-w-0 text-xs"
         />
-        <PrimitiveSelect
-          value={(authorColumn?.getFilterValue() as string) ?? ''}
-          onChange={(e) =>
-            authorColumn?.setFilterValue(e.target.value || undefined)
-          }
-          className="h-8 w-auto text-xs"
-        >
-          <option value="">All authors</option>
-          {uniqueAuthors.map((author) => (
-            <option key={author} value={author}>
-              {author}
-            </option>
-          ))}
-        </PrimitiveSelect>
         <Popover>
           <PopoverTrigger asChild>
             <Button
@@ -269,6 +256,25 @@ function PrTable({ prs }: { prs: PRScore[] }) {
           </PopoverTrigger>
           <PopoverContent>
             <div className="flex flex-col gap-2">
+              <div>
+                <label className="text-muted-foreground mb-1 block text-xs font-medium">
+                  Author
+                </label>
+                <PrimitiveSelect
+                  value={(authorColumn?.getFilterValue() as string) ?? ''}
+                  onChange={(e) =>
+                    authorColumn?.setFilterValue(e.target.value || undefined)
+                  }
+                  className="h-8 w-full text-xs"
+                >
+                  <option value="">All authors</option>
+                  {uniqueAuthors.map((author) => (
+                    <option key={author} value={author}>
+                      {author}
+                    </option>
+                  ))}
+                </PrimitiveSelect>
+              </div>
               <div>
                 <label className="text-muted-foreground mb-1 block text-xs font-medium">
                   Size

@@ -1,0 +1,74 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`composed table snapshot > matches snapshot with all sub-components 1`] = `
+<div
+  class="relative w-full overflow-auto"
+>
+  <table
+    class="w-full caption-bottom text-sm"
+    data-slot="table"
+  >
+    <thead
+      class="[&_tr]:border-b"
+      data-slot="table-header"
+    >
+      <tr
+        class="border-border hover:bg-muted/50 border-b transition-colors"
+        data-slot="table-row"
+      >
+        <th
+          class="text-muted-foreground h-12 px-4 text-left align-middle font-medium"
+          data-slot="table-head"
+        >
+          Name
+        </th>
+        <th
+          class="text-muted-foreground h-12 px-4 text-left align-middle font-medium"
+          data-slot="table-head"
+        >
+          Score
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="[&_tr:last-child]:border-0"
+      data-slot="table-body"
+    >
+      <tr
+        class="border-border hover:bg-muted/50 border-b transition-colors"
+        data-slot="table-row"
+      >
+        <td
+          class="p-4 align-middle"
+          data-slot="table-cell"
+        >
+          PR #1
+        </td>
+        <td
+          class="p-4 align-middle"
+          data-slot="table-cell"
+        >
+          85
+        </td>
+      </tr>
+      <tr
+        class="border-border hover:bg-muted/50 border-b transition-colors"
+        data-slot="table-row"
+      >
+        <td
+          class="p-4 align-middle"
+          data-slot="table-cell"
+        >
+          PR #2
+        </td>
+        <td
+          class="p-4 align-middle"
+          data-slot="table-cell"
+        >
+          72
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

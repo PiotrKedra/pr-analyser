@@ -1,0 +1,148 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ScoreRing > snapshots > high score (90) matches snapshot 1`] = `
+<svg
+  height="160"
+  viewBox="0 0 160 160"
+  width="160"
+>
+  <circle
+    cx="80"
+    cy="80"
+    fill="none"
+    r="75"
+    stroke="var(--muted)"
+    stroke-width="10"
+  />
+  <circle
+    cx="80"
+    cy="80"
+    fill="none"
+    r="75"
+    stroke="var(--success)"
+    stroke-dasharray="471.23889803846896"
+    stroke-linecap="round"
+    stroke-width="10"
+    style="stroke-dashoffset: 471.23889803846896; transition: stroke-dashoffset 1s ease-out; transform: rotate(-90deg); transform-origin: 50% 50%;"
+  />
+  <text
+    dominant-baseline="central"
+    fill="var(--foreground)"
+    font-size="40"
+    font-weight="bold"
+    text-anchor="middle"
+    x="50%"
+    y="46%"
+  >
+    90
+  </text>
+  <text
+    dominant-baseline="central"
+    fill="var(--muted-foreground)"
+    font-size="16"
+    text-anchor="middle"
+    x="50%"
+    y="65%"
+  >
+    Excellent
+  </text>
+</svg>
+`;
+
+exports[`ScoreRing > snapshots > low score (30) matches snapshot 1`] = `
+<svg
+  height="160"
+  viewBox="0 0 160 160"
+  width="160"
+>
+  <circle
+    cx="80"
+    cy="80"
+    fill="none"
+    r="75"
+    stroke="var(--muted)"
+    stroke-width="10"
+  />
+  <circle
+    cx="80"
+    cy="80"
+    fill="none"
+    r="75"
+    stroke="var(--destructive)"
+    stroke-dasharray="471.23889803846896"
+    stroke-linecap="round"
+    stroke-width="10"
+    style="stroke-dashoffset: 471.23889803846896; transition: stroke-dashoffset 1s ease-out; transform: rotate(-90deg); transform-origin: 50% 50%;"
+  />
+  <text
+    dominant-baseline="central"
+    fill="var(--foreground)"
+    font-size="40"
+    font-weight="bold"
+    text-anchor="middle"
+    x="50%"
+    y="46%"
+  >
+    30
+  </text>
+  <text
+    dominant-baseline="central"
+    fill="var(--muted-foreground)"
+    font-size="16"
+    text-anchor="middle"
+    x="50%"
+    y="65%"
+  >
+    Poor
+  </text>
+</svg>
+`;
+
+exports[`ScoreRing > snapshots > medium score (65) matches snapshot 1`] = `
+<svg
+  height="160"
+  viewBox="0 0 160 160"
+  width="160"
+>
+  <circle
+    cx="80"
+    cy="80"
+    fill="none"
+    r="75"
+    stroke="var(--muted)"
+    stroke-width="10"
+  />
+  <circle
+    cx="80"
+    cy="80"
+    fill="none"
+    r="75"
+    stroke="var(--foreground)"
+    stroke-dasharray="471.23889803846896"
+    stroke-linecap="round"
+    stroke-width="10"
+    style="stroke-dashoffset: 471.23889803846896; transition: stroke-dashoffset 1s ease-out; transform: rotate(-90deg); transform-origin: 50% 50%;"
+  />
+  <text
+    dominant-baseline="central"
+    fill="var(--foreground)"
+    font-size="40"
+    font-weight="bold"
+    text-anchor="middle"
+    x="50%"
+    y="46%"
+  >
+    65
+  </text>
+  <text
+    dominant-baseline="central"
+    fill="var(--muted-foreground)"
+    font-size="16"
+    text-anchor="middle"
+    x="50%"
+    y="65%"
+  >
+    Good
+  </text>
+</svg>
+`;

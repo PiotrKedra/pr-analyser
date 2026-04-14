@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Lottie from 'lottie-react';
 import type { ProgressEvent } from '@/lib/schemas';
 import type { SSEStatus } from '@/hooks/useSse';
+import loadingAnimation from '../../../../public/loadingAnimation.json';
 
 export function AnalysisOverlay({
   progressSteps,
@@ -24,7 +26,12 @@ export function AnalysisOverlay({
 
   return (
     <div className="bg-background fixed inset-0 z-50 flex flex-col items-center justify-center">
-      <div className="bg-muted mb-6 h-[120px] w-[120px] animate-pulse rounded-2xl" />
+      <Lottie
+        animationData={loadingAnimation}
+        loop
+        autoplay
+        className="mb-6 h-[120px] w-[120px]"
+      />
       <p className="text-muted-foreground mb-8 text-sm font-medium">
         AI is analyzing...
       </p>

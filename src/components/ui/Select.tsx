@@ -5,7 +5,7 @@ function Select({ className, ...props }: React.ComponentProps<'select'>) {
     <select
       data-slot="select"
       className={cn(
-        'border-border bg-background text-foreground flex h-10 w-full appearance-none rounded-lg border bg-[length:16px_16px] bg-[right_0.5rem_center] bg-no-repeat px-3 py-2 pr-8 text-sm transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
+        'border-border bg-background text-foreground focus-visible:border-ring focus-visible:ring-ring/50 flex h-10 w-full appearance-none rounded-lg border bg-[length:16px_16px] bg-[right_0.5rem_center] bg-no-repeat px-3 py-2 pr-8 text-sm transition-colors focus-visible:ring-3 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
         className,
       )}
       style={{

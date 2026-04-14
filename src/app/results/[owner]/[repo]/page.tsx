@@ -30,7 +30,7 @@ export default function ResultsPage({
 
         {/* TODO: Replace JSON dump with proper results dashboard */}
         {result && (
-          <pre className="border-border bg-background overflow-auto rounded-lg border p-6 text-sm text-zinc-800">
+          <pre className="border-border bg-background overflow-auto rounded-lg border p-6 text-sm text-foreground">
             {JSON.stringify(result, null, 2)}
           </pre>
         )}

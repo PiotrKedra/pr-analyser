@@ -47,7 +47,7 @@ export async function GET(request: Request) {
 
       const prs = await fetchMergedPrs(owner, repo, progress);
 
-      await progress(`Downloaded ${prs.length}/${prs.length} PRs`);
+      await progress(`Downloaded ${prs.length} PRs`);
       await progress('Analyzing code with Claude...');
 
       const result = await analyzePrs(`${owner}/${repo}`, prs);
@@ -58,7 +58,7 @@ export async function GET(request: Request) {
         await sendEvent('error', { code: error.code, message: error.message });
       } else if (error instanceof AnalysisError) {
         await sendEvent('error', {
-          code: 'ANALYSIS_FAILED',
+          code: error.code,
           message: error.message,
         });
       } else {

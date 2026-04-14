@@ -48,11 +48,17 @@ function AiAnalysisGraphic() {
   );
 }
 
+function textScoreColor(score: number) {
+  if (score >= 80) return 'text-green-600';
+  if (score >= 50) return 'text-foreground';
+  return 'text-red-600';
+}
+
 function ScorecardGraphic() {
   const rows = [
-    { pr: 'Auth fix', impact: 82, ai: 45, quality: 91 },
-    { pr: 'Dark mode', impact: 68, ai: 88, quality: 74 },
-    { pr: 'API client', impact: 91, ai: 72, quality: 85 },
+    { id: 12, title: 'fix: auth redirect loop', score: 91 },
+    { id: 11, title: 'feat: dark mode toggle', score: 74 },
+    { id: 10, title: 'refactor: API client', score: 85 },
   ];
 
   // Overflows card bounds (160% width + offset) for visual depth
@@ -60,19 +66,23 @@ function ScorecardGraphic() {
     <table className="w-[160%] translate-x-4 text-sm">
       <thead>
         <tr className="text-muted-foreground border-border border-b">
-          <th className="pb-2 text-left font-medium">PR</th>
-          <th className="pb-2 text-right font-medium">Impact</th>
-          <th className="pb-2 text-right font-medium">AI</th>
-          <th className="pb-2 text-right font-medium">Quality</th>
+          <th className="pb-2 text-left font-medium">#</th>
+          <th className="pb-2 text-left font-medium">Title</th>
+          <th className="pb-2 text-right font-medium">Score</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row) => (
-          <tr key={row.pr} className="border-border/50 border-b">
-            <td className="py-2.5 text-left">{row.pr}</td>
-            <td className="py-2.5 text-right">{row.impact}</td>
-            <td className="py-2.5 text-right">{row.ai}</td>
-            <td className="py-2.5 text-right">{row.quality}</td>
+          <tr key={row.id} className="border-border/50 border-b">
+            <td className="text-muted-foreground py-2.5 text-left">
+              {row.id}
+            </td>
+            <td className="truncate py-2.5 text-left">{row.title}</td>
+            <td
+              className={`py-2.5 text-right font-bold ${textScoreColor(row.score)}`}
+            >
+              {row.score}
+            </td>
           </tr>
         ))}
       </tbody>

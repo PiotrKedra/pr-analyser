@@ -62,10 +62,10 @@ src/
 
 ## Scoring Model
 
-- **Impact** (30%): Real value of PR changes — functionality, architecture, performance.
-- **AI-Leverage** (35%): Evidence of AI-generated code — patterns, co-authored-by, tags, size/coherence ratio.
-- **Quality** (35%): Engineering quality — focused PRs, clean code, descriptions, tests, refactoring.
-- `totalScore = impact * 0.30 + aiLeverage * 0.35 + quality * 0.35`
+- **Impact** (20%): Real value of PR changes — functionality, architecture, performance.
+- **AI-Leverage** (40%): Evidence of AI-generated code — patterns, co-authored-by, tags, size/coherence ratio.
+- **Quality** (40%): Engineering quality — focused PRs, clean code, descriptions, tests, refactoring.
+- `totalScore = impact * 0.20 + aiLeverage * 0.40 + quality * 0.40`
 
 ## Git Workflow
 

@@ -176,12 +176,12 @@ Build the complete landing page using the design system. Every section from the 
 
 ### Validation
 
-- [ ] All 6 sections render correctly at 375px, 768px, 1280px, 1440px
-- [ ] Tested in Chrome, Firefox, Safari
-- [ ] PageSpeed Insights mobile score at **https://pagespeed.web.dev/**: all 4 metrics ≥ 90 on the Vercel preview URL
-- [ ] URL input validates on submit: shows inline error for invalid GitHub URLs
-- [ ] Submit navigates to `/results/{owner}/{repo}`
-- [ ] `<title>` and meta description set correctly
+- [✅] All 6 sections render correctly at 375px, 768px, 1280px, 1440px
+- [✅] Tested in Chrome, Firefox, Safari
+- [✅] PageSpeed Insights mobile score at **https://pagespeed.web.dev/**: all 4 metrics ≥ 90 on the Vercel preview URL
+- [✅] URL input validates on submit: shows inline error for invalid GitHub URLs
+- [✅] Submit navigates to `/results/{owner}/{repo}`
+- [✅] `<title>` and meta description set correctly
 
 ---
 
@@ -245,13 +245,13 @@ event: error     data: { code: "RATE_LIMIT" | "PRIVATE_REPO" | "NO_PRS" | "INVAL
 
 ### Validation
 
-- [ ] `https://github.com/vercel/next.js` returns real scores for real merged PRs
-- [ ] SSE stream shows 4 progress events then `result` event (verify in DevTools)
-- [ ] Private repo URL returns `PRIVATE_REPO` error event
-- [ ] URL with 0 merged PRs returns `NO_PRS` error with suggestion
+- [✅] `https://github.com/vercel/next.js` returns real scores for real merged PRs
+- [✅] SSE stream shows 4 progress events then `result` event (verify in DevTools)
+- [✅] Private repo URL returns `PRIVATE_REPO` error event
+- [✅] URL with 0 merged PRs returns `NO_PRS` error with suggestion
 - [ ] Rate limit exceeded returns `RATE_LIMIT` error with actionable message
-- [ ] Claude's JSON output is validated by Zod — tested with a unit test using a fixture response
-- [ ] Vitest unit tests: `parseGitHubUrl`, Zod schema validation, score calculation (`totalScore` weighted average)
+- [✅] Claude's JSON output is validated by Zod — tested with a unit test using a fixture response
+- [✅] Vitest unit tests: `parseGitHubUrl`, Zod schema validation, score calculation (`totalScore` weighted average)
 
 ---
 
@@ -291,13 +291,10 @@ Build the results dashboard: repository-level scores, per-PR breakdown table, fi
 - Columns: Title (link to GitHub PR), Author, Size (±lines / files), Impact, AI-Leverage, Quality, Total Score
 - Sortable: click column header toggles asc/desc
 - Filterable: author multiselect, score range sliders (min/max per dimension), size filter
-- Row expansion: click PR row → inline expanded view with PR summary text from Claude
-- Pagination: 10 per page (or virtual scroll if 20 rows feels fine)
 
 **Loading state:**
 
 - Full-page animated loading screen while SSE streams — show progress steps from SSE events
-- Skeleton loaders for cards/table while data arrives
 - Creative option: animated score rings counting up from 0 on result arrival
 
 **Error state:**
@@ -314,13 +311,13 @@ Build the results dashboard: repository-level scores, per-PR breakdown table, fi
 
 ### Validation
 
-- [ ] Dashboard renders correctly with the real API response from Step 5
-- [ ] Sorting by each column works correctly (asc/desc toggle, numbers sort numerically not lexicographically)
-- [ ] Filtering by author and score range updates the list in real-time
-- [ ] Loading state displays with progress messages from SSE
-- [ ] Error state renders correctly for each error code (`NO_PRS`, `RATE_LIMIT`, etc.)
+- [✅] Dashboard renders correctly with the real API response from Step 5
+- [✅] Sorting by each column works correctly (asc/desc toggle, numbers sort numerically not lexicographically)
+- [✅] Filtering by author and score range updates the list in real-time
+- [✅] Loading state displays with progress messages from SSE
+- [✅] Error state renders correctly for each error code (`NO_PRS`, `RATE_LIMIT`, etc.)
 - [ ] Mobile layout tested at 375px (table switches to card layout)
-- [ ] `ScoreRing` animation runs on dashboard mount
+- [✅] `ScoreRing` animation runs on dashboard mount
 
 ---
 
@@ -379,11 +376,11 @@ Review the full product end-to-end, address rough edges, and selectively impleme
 ### Validation
 
 - [ ] Scroll animations work without CLS — re-run PageSpeed at **https://pagespeed.web.dev/** and confirm still ≥ 90
-- [ ] Score rings animate from 0 on dashboard mount
+- [✅] Score rings animate from 0 on dashboard mount
 - [ ] OG preview renders correctly (test at https://opengraph.xyz with the results page URL)
-- [ ] "Copy link" button copies the current URL to clipboard
-- [ ] Recommendations section renders on dashboard
-- [ ] `yarn build` completes with 0 TypeScript errors
+- [✅] "Copy link" button copies the current URL to clipboard
+- [✅] Recommendations section renders on dashboard
+- [✅] `yarn build` completes with 0 TypeScript errors
 - [ ] No `console.error` in browser console on happy path
 
 ---
@@ -407,12 +404,12 @@ Write the README, do a final end-to-end QA pass, record the required screen capt
 
 **Final QA checklist:**
 
-- [ ] Happy path: `https://github.com/facebook/react` → full dashboard loads
-- [ ] Error paths: private repo, no PRs, invalid URL all show correct error UI
-- [ ] Mobile (375px): LP scrolls correctly, dashboard usable, table readable
-- [ ] PageSpeed Insights at **https://pagespeed.web.dev/** on live Vercel URL: all 4 metrics ≥ 90 on LP mobile
-- [ ] All PR history: each feature built as a separate PR merged to `dev`, with `[cc]` tags on AI-assisted commits
-- [ ] `prompts.md` in repo root with 3–4 best prompts from the build
+- [✅] Happy path: `https://github.com/facebook/react` → full dashboard loads
+- [✅] Error paths: private repo, no PRs, invalid URL all show correct error UI
+- [✅] Mobile (375px): LP scrolls correctly, dashboard usable, table readable
+- [✅] PageSpeed Insights at **https://pagespeed.web.dev/** on live Vercel URL: all 4 metrics ≥ 90 on LP mobile
+- [✅] All PR history: each feature built as a separate PR merged to `dev`, with `[cc]` tags on AI-assisted commits
+- [✅] `prompts.md` in repo root with 3–4 best prompts from the build
 
 **Screen recording checklist:**
 
@@ -432,7 +429,7 @@ Write the README, do a final end-to-end QA pass, record the required screen capt
 
 - [ ] README covers all 8 required sections
 - [ ] Live demo URL loads and works from an incognito window on mobile
-- [ ] GitHub repo is public, `dev` is default branch, all work done via PRs (no direct commits to `dev`)
+- [✅] GitHub repo is public, `dev` is default branch, all work done via PRs (no direct commits to `dev`)
 - [ ] Recording is accessible via shared link (test in incognito)
 - [ ] Submission email drafted and ready to send to rafal.moch@photoaid.com
 

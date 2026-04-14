@@ -1,12 +1,12 @@
-Co-authored-by: Claude <claude@anthropic.com>
-
-in result page when useSse is steraming events and analysis is not rdy, we want to display full page overlay showing that AI is working. 
-
-It should have white bg, on top we will place LottiFiels animation (for now use gray div mock)
-Belowe there should be event stream with checks (similiar to current implmentation). But to achive nice visula effect place progress steram in a coniatenr of hiegh 300px, on top and bottom of the conaater add abolsute dives with white/transparetn gradient to achive effect where progress steps shows and disapear
-When steram finishes show on result page JSON result as it is done now
+# Example used prompts
 
 
+## Backend API
+
+### Opis
+Prompt zbudowany na podstawie przygotwanego wczesniej planu i wykorzystany do przygotwania api przy użyciu GitHub API i Claude API
+
+### Prompt
 Now we are moving to cerate a proper api that gets PR's from github and analysiy it using claude. YOu need to update our prortype
 
 key points:
@@ -31,6 +31,12 @@ key points:
   - Claude API error → surface as generic ANALYSIS_FAILED
   - Claude API -> rate limit
 
+## Landing sections
+
+### Opis
+Prompt użyty do wygenerowania brakujacyhc sekcji na landing pagu
+
+### Prompt
 We are working on landing page secitons now. We already have implemented hero and social proof. 
 - For each seciton i will provide u a basic instruction and ui guidelines.
 - each section need to be responsive and seo friendly
@@ -44,6 +50,12 @@ Sections:
 3. **Example Dashboard Preview** - 4 cards with example preview showing mock result - desktop layout: 2 rows, first row splits 66/33, and second row splits 33/66. On mobile we have one column and each card has same width. Each card should be transapren color but with neutral border around it - each card should have graphic (for now it can be a gray color), h3 title and short description. Whole section should be on conainer with white bg so it cuts from the rest of the page - white bg should be from one side of the screen to another, without any spacing
 4. **Footer** - regular footer, on desktop it should have 4 columns: first one about the product with procut logo (same as in the header), rest of the columns should be a mocked links that naviaget to /mocked-page (create a basic mocked page - very simple). At the bottom of the footer we should have copyrigh info
 
+## Landing sections fixes
+
+### Opis
+Prompt użyty do poprawienia wygladu wygnerowanych sczesniej sekcji
+
+### Prompt
 
 Need to apply few changes to the landing page
 1. **How It Works** -> justify h2 to the left. Make the height of the grafhics smaller ~200px. Each graphic is too boring, make a URL graphic (input and button larger, so it overflows left and right from the card, but to the card itsefl add overflow hidden to get a nice effect). For AI analyses every PR make a graphic overflows the right border and loading animation should be shown only when user hovers on this graphic. For "Get your scorecard" -> alos make the table wider so it overflows to the right border.
@@ -51,28 +63,13 @@ Need to apply few changes to the landing page
 3. **Example Dashboard Preview** -> make the seciton max width 764px and add description below h2. Each graphic should be touching top and right border of the card
 4. General fixes: increas spacing between section to 6.5rem, each h2 should have m-b 45px (if there is a description belowe, then h2 and description both should have 45px margin at the bottom - combine them into 1 div)
 
-- file naming convention
-- input styling and error state
-- logo seciton 5 by 2 (visible directly belwoe hero seciotn without scrolling)
 
+## Code review skill
 
-Create a design system setup using tailwind, belowe u have basic info about the colors. Pls then addjust Button.tsx component and build Link.tsx commponent using next Link
+### Opis
+Prompt wykorzystany do stowrzenia code review skilla, ktory przyspieszy weryfikacjie jakosci kodu w PR'ach
 
-4D42E0 - btn bg primary color
-FFFFFF - btn color text
-3D35AC - btn bg hover color
-F3F9FB - bg color of whole page
-1D243A - regular text color
-
-regular link <a> tags should user regular text color and a:hover {
-opacity: 0.6;
-text-decoration: underline;
-}
-
-
-
-based on plan.md file and zadanie_rekrutacyjne_photoaid.md create a CLAUDE.md rules for the project
-
+### Prompt
 pls add a code reivew skill to .claude/skills/code-review/SKILL.md it should verifys provided code. first step is to detect the pice fo code ## Step 1: Scope Detection - branch,  
 feature, single file, second step ## Step 2: Review Axes -> based on /Users/piotrkedra/development/projects/web/pr-analyser/plan.md pls preapre ther reviing axes, ## Step 3: Output  
 Format
@@ -82,7 +79,7 @@ For each finding, report using these severity levels:
 **WARNING** — deviates from target patterns; should be addressed in new code  
 **SUGGESTION** — improvement opportunity, non-blocking
 
-### Output template:
+Output template:
 
 ```
 ## Code Review: {path reviewed}
@@ -107,3 +104,20 @@ For each finding, report using these severity levels:
 ### Summary
 {1-2 sentence summary: X critical, Y warnings, Z suggestions}
 ```
+
+
+## Loading Overlay
+
+### Opis
+
+Prompt wykorzystany do zbudowania  overlay loading komponentu podczas czekania na analize
+
+### Prompt
+
+in result page when useSse is steraming events and analysis is not rdy, we want to display full page overlay showing that AI is working.
+
+It should have white bg, on top we will place LottiFiels animation (for now use gray div mock)
+Belowe there should be event stream with checks (similiar to current implmentation). But to achive nice visula effect place progress steram in a coniatenr of hiegh 300px, on top and bottom of the conaater add abolsute dives with white/transparetn gradient to achive effect where progress steps shows and disapear
+When steram finishes show on result page JSON result as it is done now
+
+pls create a result-mock page and place that overlay component there so i can test it easly, later we will move it to proper place

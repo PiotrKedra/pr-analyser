@@ -85,6 +85,7 @@ export const prScoreSchema = z.object({
   quality: z.number().min(0).max(100),
   totalScore: z.number().min(0).max(100),
   summary: z.string(),
+  diffUrl: z.string(),
 });
 
 export type PRScore = z.infer<typeof prScoreSchema>;

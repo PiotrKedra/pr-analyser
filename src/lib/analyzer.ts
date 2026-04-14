@@ -167,6 +167,7 @@ Score each PR on Impact, AI-Leverage, and Quality (0-100 each). Return JSON only
       quality,
       totalScore,
       summary: score?.summary ?? 'No analysis available for this PR.',
+      diffUrl: `https://github.com/${repo}/pull/${pr.number}/files`,
     };
   });
 

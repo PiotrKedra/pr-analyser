@@ -16,10 +16,12 @@ export function ResultsPage({ owner, repo }: { owner: string; repo: string }) {
         <AnalysisOverlay progressSteps={progressSteps} status={status} />
       )}
       <div className="w-full max-w-5xl">
-        <PageTitle className="mb-8 flex items-center gap-2">
-          Review of {owner}/{repo}
+        <div className="mb-8 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
+          <PageTitle>
+            Review of {owner}/{repo}
+          </PageTitle>
           <CopyLinkButton />
-        </PageTitle>
+        </div>
         {error && (
           <div className="border-destructive/30 bg-destructive/10 text-destructive rounded-lg border p-4">
             {error}

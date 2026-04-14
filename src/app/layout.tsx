@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, PT_Serif } from 'next/font/google';
+import { Footer } from '@/features/landing/Footer';
 import './globals.css';
 
 const inter = Inter({
@@ -30,7 +31,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${ptSerif.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
